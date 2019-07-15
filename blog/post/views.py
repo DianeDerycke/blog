@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from blog.category.models import Category
 from blog.post.models import Post
 from django.views.generic.list import ListView
 
