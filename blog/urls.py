@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from blog.post.views import PostListView
+from blog.post.views import PostDetailView
 from blog.category.views import PostFromCategoryListView
 
 urlpatterns = [
-    path('post/<slug:slug>', PostFromCategoryListView.as_view(), name='post-list'),    
+    path('post/<slug>', PostDetailView.as_view(), name='post-detail'),
+    path('category/<slug>', PostFromCategoryListView.as_view(), name='post-list'),
     path('posts/', PostListView.as_view(), name='post-list'),
 ]
